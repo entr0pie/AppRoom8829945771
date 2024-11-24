@@ -14,10 +14,10 @@ interface ItemDao {
     suspend fun insert(item: Item)
 
     @Query("SELECT * FROM ITEMS WHERE id = :id")
-    suspend fun getItem(id: Int): Flow<Item>
+    fun getItem(id: Int): Flow<Item>
 
     @Query("SELECT * FROM ITEMS")
-    suspend fun getAllItems(): Flow<List<Item>>
+    fun getAllItems(): Flow<List<Item>>
 
     @Update
     suspend fun update(item: Item)
